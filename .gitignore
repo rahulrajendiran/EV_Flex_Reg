@@ -9,8 +9,9 @@ myenv/
 .env/
 
 # Data & results
-results/
 models/
+results/
+
 
 # OS junk
 .DS_Store
