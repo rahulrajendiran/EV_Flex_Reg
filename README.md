@@ -82,8 +82,8 @@ This project demonstrates how **EV charging data** can be transformed into **pre
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/EV-Flexible-Regulation-Forecast.git
-cd EV-Flexible-Regulation-Forecast
+git clone https://github.com/rahulrajendiran/EV_Flex_Reg.git
+cd EV_Flex_Reg
 
 # Install dependencies
 pip install -r requirements.txt
