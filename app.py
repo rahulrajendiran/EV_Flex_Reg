@@ -113,6 +113,14 @@ Q50_MODEL = os.path.join(MODELS_DIR, "quantile_q50.pkl")
 Q90_MODEL = os.path.join(MODELS_DIR, "quantile_q90.pkl")
 TS_MODEL = os.path.join(MODELS_DIR, "lightgbm_timeseries_model.pkl")
 
+# ── Auto-train models if missing (Streamlit Cloud safe) ──
+if not all(os.path.exists(p) for p in [
+    POINT_MODEL, Q10_MODEL, Q50_MODEL, Q90_MODEL, TS_MODEL
+]):
+    with st.spinner("📦 Models missing. Auto-training starting..."):
+        from train_and_save_lightbgm_quantile import main
+        main()
+
 for p in [POINT_MODEL, Q10_MODEL, Q50_MODEL, Q90_MODEL, TS_MODEL]:
     if not os.path.exists(p):
         st.error(f"❌ Missing model file: {os.path.basename(p)}")

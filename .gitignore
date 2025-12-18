@@ -9,8 +9,7 @@ myenv/
 .env/
 
 # Data & results
-models/
-results/
+
 
 
 # OS junk
